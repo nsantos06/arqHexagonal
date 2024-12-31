@@ -43,9 +43,8 @@ func (p *ProductDb) Save(product application.ProductInterface) (application.Prod
 		if err != nil {
 			return nil, err
 		}
-		return product, nil
 	}
-
+	return product, nil 
 }
 
 func (p *ProductDb) create(product application.ProductInterface) (application.ProductInterface, error) {
