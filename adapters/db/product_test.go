@@ -35,8 +35,6 @@ func createProducts(db *sql.DB) {
 	stmt.Exec()
 }
 
-
-
 func TestProductDb_Get(t *testing.T){
 	setUp()
 	defer Db.Close()
