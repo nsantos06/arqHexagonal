@@ -11,6 +11,9 @@ func (s *ProductService) Get(id string) (ProductInterface, error) {
 	}
 	return product, nil
 }
+func NewProductService (persistance ProductPersistanceInterface) *ProductService{
+	return &ProductService{Persistance: persistance}
+}
 
 func (s *ProductService) Create(nome string, price float64) (ProductInterface, error) {
 	product := NewProduct()
