@@ -1,20 +1,11 @@
-package main 
+/*
+Copyright © 2025 NAME HERE <EMAIL ADDRESS>
 
-import( 
-	"database/sql"
-	db2 "github.com/codeedu/go-hexagonal/adapters/db"
-	"github.com/codeedu/go-hexagonal/application"
-	_ "github.com/mattn/go-sqlite3"
-)
+*/
+package main
 
-func main () {
-	db, _ := sql.Open("sqlite3", "db.sqlite")
-	productDbAdapter := db2.NewProductDb(db)
-	productService := application.NewProductService(productDbAdapter)
-	product, _ := productService.Create("Product Example", 30)
+import "github.com/codeedu/go-hexagonal/cmd"
 
-	productService.Enable(product)
-
-
-
-}	
+func main() {
+	cmd.Execute()
+}
