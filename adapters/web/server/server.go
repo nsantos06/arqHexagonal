@@ -20,13 +20,15 @@ func MakeNewWebServer()*Webserver{
 	return &Webserver{}
 }
 
-	r := mux.NewRouter() 
+
+func (w Webserver) Serve(){
+	r := mux.NewRouter()
+	
 	n := negroni.New(
 		negroni.NewLogger(),
 
 	)
-
-func (w Webserver) Serve(){
+	
 	server := &http.Server{
 		ReadHeaderTimeout: 10 * time.Second,
 		WriteTimeout: 10 & time.Second,
